@@ -130,3 +130,43 @@ body {
   display: inline-block;
   margin-right: 10px;
 }
+
+.tag-size-1 {
+  font-size: 90%;
+  color: rgb(87, 144, 163);
+}
+
+.tag-size-2 {
+  font-size: 110%;
+  color: rgb(57, 108, 126);
+}
+
+.tag-size-3 {
+  font-size: 150%;
+  color: rgb(38, 82, 99);
+}
+
+.tag-size-4 {
+  font-size: 180%;
+  color: rgb(17, 52, 66);
+}
+
+.tag-size-5 {
+  font-size: 200%;
+  font-weight: bold;
+  color: rgb(9, 38, 49);
+}
+
+.list.tags li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.list.tags li a {
+  text-decoration: none;
+}
+
+.list.tags {
+  display: flex;
+  flex-wrap: wrap;
+}
