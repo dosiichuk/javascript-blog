@@ -48,7 +48,7 @@
     /* remove contents of titleList */
     const titleList = document.querySelector(optTitleListSelector);
     titleList.innerHTML = '';
-    const articles = Array.from(document.querySelectorAll(optArticleSelector + customSelector));
+    const articles = Array.from(document.querySelectorAll(optArticleSelector.trim() + customSelector));
     /* create HTML of the links */
     const markup = articles
       .map(
@@ -189,8 +189,7 @@
       html += `<li>
                   <a href="#author-${name.split(' ').join('-')}" class="author-link">
                     <span class="author-name">${name}</span>
-                  </a>
-                </li>`;
+                  </a>(${authorNames[name]})</li>`;
     });
     const authorNameWrapper = document.querySelector(optAuthorListSelector);
     authorNameWrapper.insertAdjacentHTML('afterbegin', html);
@@ -200,7 +199,7 @@
     event.preventDefault();
     const clickedElement = this;
     const href = clickedElement.getAttribute('href');
-    const author = clickedElement.innerText;
+    const author = clickedElement.innerText.trim();
     const activeAuthorLinks = document.querySelectorAll(optActiveAuthorLinksSelector);
     activeAuthorLinks.forEach(link => link.classList.remove('active'));
     const foundLinks = document.querySelectorAll('a[href="' + href + '"]');
